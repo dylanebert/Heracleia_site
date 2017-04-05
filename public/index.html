@@ -1,0 +1,93 @@
+<html>
+<head>
+	<title>Heracleia Human-Centered Computing Lab</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Palanquin+Dark" rel="stylesheet">
+</head>
+<style>
+body {
+	font-family: 'Open Sans', sans-serif;	
+}
+
+/*Navbar css*/
+.navbar-header {
+	width: 100%;
+	padding: 10px 0;
+	font-family: 'Palanquin Dark', sans-serif;
+	font-size: 2em;
+}
+ul.nav li a, ul.nav li a:visited, ul.nav li.active a {
+    color: white;
+}
+
+/* Don't let the navbar collapse on mobile */
+ul.nav li a:hover {
+    color: #e5e5e5;
+}
+.navbar-collapse.collapse {
+  display: block!important;
+}
+.navbar-nav>li, .navbar-nav {
+  float: left !important;
+}
+.navbar-nav.navbar-right:last-child {
+  margin-right: -15px !important;
+}
+.navbar-right {
+  float: right!important;
+}
+#body {
+	margin-bottom: 50px;
+}
+</style>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="text-primary navbar-left li_home" href="#"><img src="logo.png" style="height: 64px;"></img> Heracleia Human-Centered Computing Lab</a>
+			</div>
+		</div>
+		<div class="navbar-body" style="background-color: rgb(66, 134, 244);">
+			<div class="container">
+				<ul class="nav navbar-nav">
+					<li><a class="li_home" href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+					<li><a class="li_people" href="#">People</a></li>
+					<li><a class="li_projects" href="#">Projects</a></li>
+					<li><a class="li_publications" href="#">Publications</a></li>
+					<li><a class="li_internships" href="#">Internships</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!--
+		The body is populated by separate html files
+		For example, it is populated by home.html on initial load
+	-->
+	<div class="container" id="body"></div>
+</body>
+<script>
+$(document).ready(function() {
+	/*Initialization*/
+	$('#body').load('home.html');
+	
+	/*Navigation*/
+	$('.li_home').click(function() {
+		$('#body').load('home.html');
+	});
+	$('.li_people').click(function() {
+		$('#body').load('people.html');
+	});
+	$('.li_projects').click(function() {
+		$('#body').load('projects.html');
+	});
+	$('.li_publications').click(function() {
+		$('#body').load('publications.html');
+	});
+	$('.li_internships').click(function() {
+		$('#body').load('internships.html');
+	});
+});
+</script>
+</html>
