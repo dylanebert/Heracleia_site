@@ -1,1 +1,46 @@
-<h1>Projects</h1>
+<style>
+tr {
+	width: 100%;
+}
+h4 {
+	font-weight: bold;
+}
+</style>
+<!--Each project information is stored in an html file references in each link's "target" attribute-->
+<h2>Current Projects</h2>
+<table class="table borderless">
+	<tr>
+		<td style="width: 20%;">
+			<div class="list-group" id="projects_list">
+				<a class="project_link list-group-item" target="apsen.html"><span class="glyphicon glyphicon-heart"></span>  APSEN</a>
+				<a class="project_link list-group-item" target="boxblocks.html"><span class="glyphicon glyphicon-collapse-down"></span>  Box and Blocks</a>
+				<a class="project_link list-group-item" target="brainee.html"><span class="glyphicon glyphicon-dashboard"></span>  Brainee</a>
+				<a class="project_link list-group-item" target="htks.html"><span class="glyphicon glyphicon-hand-right"></span>  HTKS</a>
+				<a class="project_link list-group-item" target="iwork.html"><span class="glyphicon glyphicon-wrench"></span>  iWork</a>
+				<a class="project_link list-group-item" target="magni.html"><span class="glyphicon glyphicon-magnet"></span>  Magni</a>
+				<a class="project_link list-group-item" target="myolearn.html"><span class="glyphicon glyphicon-cog"></span>  MyoLearn</a>
+				<a class="project_link list-group-item" target="ogma.html"><span class="glyphicon glyphicon-picture"></span>  Ogma</a>
+				<a class="project_link list-group-item" target="seriousgames.html"><span class="glyphicon glyphicon-play"></span>  Serious Games</a>
+				<a class="project_link list-group-item" target="varm.html"><span class="glyphicon glyphicon-bishop"></span>  VARM</a>
+			</div>
+		</td>
+		<td id="project_content" style="width: 80%;">
+			<p>Select a project on the left to view more information</p>
+		</td>
+	</tr>
+</table>
+
+<h2>Past Projects</h2>
+<ul>
+	<li>CPS Games</li>
+</ul>
+
+<script>
+var active = null;
+$('.project_link').click(function() {
+	$(active).removeClass('active');
+	active = this;
+	$(this).addClass('active');
+	$('#project_content').load('projects/' + $(this).attr('target'));
+});
+</script>
